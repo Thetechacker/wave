@@ -1,0 +1,35 @@
+{
+  "name": "wave",
+  "version": "0.0.1-a",
+  "description": "C++ to JavaScript (Node) Transcription of https://github.com/Thrifleganger/audio-programming-youtube/blob/master/wav-file-format/main.cpp",
+  "main": "main.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thetechacker/wave.git"
+  },
+  "keywords": [
+    "Thetechacker",
+    "Node.js",
+    "JavaScript",
+    "Wave",
+    "Wav",
+    "WaveForm",
+    "RIFF",
+    "Microsoft",
+    "Audio",
+    "Format"
+  ],
+  "author": "Thetechacker, Thrifleganger (Akash Murthy)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Thetechacker/wave/issues"
+  },
+  "homepage": "https://github.com/Thetechacker/wave#readme",
+  "dependencies": {
+    "arcsecond": "^4.1.0",
+    "arcsecond-binary": "^1.2.0"
+  }
+}
