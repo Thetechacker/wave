@@ -16,7 +16,7 @@
     "JavaScript",
     "Wave",
     "Wav",
-    "WaveForm",
+    "Waveform",
     "RIFF",
     "Microsoft",
     "Audio",
@@ -28,8 +28,4 @@
     "url": "https://github.com/Thetechacker/wave/issues"
   },
   "homepage": "https://github.com/Thetechacker/wave#readme",
-  "dependencies": {
-    "arcsecond": "^4.1.0",
-    "arcsecond-binary": "^1.2.0"
-  }
 }
