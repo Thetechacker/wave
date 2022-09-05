@@ -76,7 +76,7 @@ class TriangleOscillator {
 
         this.val += this.offset * (this.switch ? 1 : -1)
 
-        return this.amplitude * parseFloat(sample.toPrecision(2))
+        return this.amplitude * (Math.abs(parseInt(sample)) == 1 ? parseInt(sample) : sample) // this.amplitude * parseFloat(sample.toPrecision(2))
     }
 }
 
