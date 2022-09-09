@@ -101,6 +101,45 @@ function generatePCMData(sampleRate, bitDepth, duration, oscillatorClass, freque
     return data
 }
 
+function MultiOscillatorPCM(sampleRate, bitDepth, duration, initializedOscillatorClasses){
+    if(invalidInt(sampleRate) || invalidInt(bitDepth) || invalidInt(duration)) return null
+
+    var data = []
+    var maxAmplitude = Math.pow(2, bitDepth - 1) - 1
+    var channels = initializedOscillatorClasses.length
+
+    var curosc = 0
+
+    for(var i = 0; i < sampleRate * (duration * channels); i++){
+        if(curosc >= channels){
+            curosc = 0
+        }
+
+        var sample = initializedOscillatorClasses[curosc].process()
+        var intSample = (sample * maxAmplitude)
+
+        data.push(intSample)
+
+        curosc++
+    }
+
+    return data
+}
+
+function toMonoPCM(data, channels){
+    if(!Array.isArray(data) || !data.every(val => typeof val === "number") || invalidInt(channels)) return null
+
+    var fdata = []
+
+    for(var i = 0; i < data.length; i += (channels ** 2)){
+        for(var ch = 0; ch < channels; ch++){
+            fdata.push(data[i + ch])
+        }
+    }
+
+    return fdata
+}
+
 function WAVEBuffer(data, chunkDataSize, compressionCode, channels, sampleRate, bitDepth){
     if(!Array.isArray(data) || !data.every(val => typeof val === "number")) return null
     if(invalidInt(chunkDataSize) || invalidInt(compressionCode) || invalidInt(channels) || invalidInt(sampleRate) || invalidInt(bitDepth)) return null
